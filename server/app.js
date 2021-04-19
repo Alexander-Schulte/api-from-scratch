@@ -247,14 +247,14 @@ app.delete("/students/:studentId", (req, res) => {
       });
     });
 });
-mongoose.connect("mongodb://localhost/friyayExercise", {
+const { PORT, MONGO_URL } = process.env;
+
+mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 const mongodb = mongoose.connection;
-
-const { PORT } = process.env;
 
 mongodb.on("open", () => {
   app.listen(PORT, () => {
