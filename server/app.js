@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Student = require("./student");
 const Course = require("./course");
 const student = require("./student");
+require("dotenv").config();
 
 const app = express();
 
@@ -253,8 +254,10 @@ mongoose.connect("mongodb://localhost/friyayExercise", {
 
 const mongodb = mongoose.connection;
 
+const { PORT } = process.env;
+
 mongodb.on("open", () => {
-  app.listen(4000, () => {
-    console.log("Listening on http://localhost:4000");
+  app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
   });
 });
