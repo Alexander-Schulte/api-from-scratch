@@ -72,7 +72,7 @@ app.get("/courses/:courseId/students", (req, res) => {
       } else {
         res.status(404);
         res.json({
-          error: `Post with id: ${courseId} not found`,
+          error: `Post with id: ${courseIdgit} not found`,
         });
       }
     })

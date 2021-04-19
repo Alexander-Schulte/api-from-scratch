@@ -4,13 +4,21 @@ const { Schema } = mongoose;
 
 const StudentSchema = new Schema(
   {
-    firstName: String,
-    lastName: String,
+    firstName:{
+      type: String,
+      required: true,
+    },
+    lastName:{
+      type: String,
+      required: true,
+    },
     course: String,
   },
   {
     timestamps: true,
     versionKey: false,
+    
+
   }
 );
 
